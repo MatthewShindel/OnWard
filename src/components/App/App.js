@@ -1,27 +1,16 @@
-import logo from './logo.svg';
+import logo from '../../logo.svg';
 import './App.css';
 import { Route, Routes, Link } from 'react-router-dom';
 import { useState } from 'react';
-import ErrorPage from '../ErrorPage/ErrorPage';
-import ResultPage from '../ResultPage/ResultPage';
-import Form from '../Form/Form';
+import ErrorPage from '../ErrorPage/ErrorPage.js';
+import ResultPage from '../ResultPage/ResultPage.js';
+import Form from '../Form/Form.js';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header >
+				
       </header>
 
 			<main>
@@ -30,7 +19,6 @@ function App() {
 					<Route path='/result' element={<ResultPage/>}/>
 					<Route path='*' element={<ErrorPage/>}/>
 				</Routes>
-
 			</main>
     </div>
   );
