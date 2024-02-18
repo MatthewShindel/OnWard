@@ -10,13 +10,23 @@ export default function Form( { updateSalary, updateExpenses, updateZipcode, upd
   const [expenses, setExpenses] = useState('');
   const [zipcode, setZipcode] = useState('');
 	const navigate = useNavigate();
-	// const regex = /^\d{5}(?:[-\s]\d{4})?$/gm; 
-
-	// regex.exec(str)
   function submitUserData(event) {
     event.preventDefault();
-		//do the setting state here
-		//after that's done, clearContent
+		const validNumberRegex = /\d+/
+		const validZipcode = /^\d{5}(?:[-\s]\d{4})?$/gm;
+
+		if(!validNumberRegex.test(salary)){
+			alert('The value you put in for your salary is invalid. Please put in a valid number.')
+			return;
+		}
+		if(!validNumberRegex.test(expenses)){
+			alert('The value you put in for your expenses is invalid. Please put in a valid number.')
+			return;
+		}
+		if(!validZipcode.test(zipcode)){
+			alert('The value you put in for your zipcode is invalid. Please put in a valid number.')
+			return;
+		}
 		console.log(zipcode);
 		getTaxRate(zipcode)
 		.then(data => {
