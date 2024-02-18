@@ -31,11 +31,13 @@ function App() {
 
 	function updateCombinedRate(rate) {
 		setCombinedRate(rate)
+		console.log("combinedRate: ", rate, typeof rate);
 	}
 
-	useEffect(() =>{
-		updateCombinedRate(getTaxRate(zipcode))
-	}, [zipcode])
+	// useEffect(() =>{
+	// 	updateCombinedRate(getTaxRate(zipcode))
+	// 	console.log("The combined Rate is:",combinedRate);
+	// }, [zipcode])
 
 
   return (
@@ -46,7 +48,7 @@ function App() {
 
 			<main>
 				<Routes>
-					<Route path='/' element={<Form updateSalary = {updateSalary} updateZipcode = {updateZipcode}  updateExpenses = {updateExpenses}/>}/>
+					<Route path='/' element={<Form updateSalary = {updateSalary} updateZipcode = {updateZipcode}  updateExpenses = {updateExpenses} updateCombinedRate = {updateCombinedRate}/>}/>
 					<Route path='/result' element={<ResultPage zipcode = {zipcode} salary = {salary} expenses = {expenses} combinedRate = {combinedRate}/>}/>
 					<Route path='*' element={<ErrorPage/>}/>
 				</Routes>

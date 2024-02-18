@@ -26,6 +26,7 @@ export default function ResultPage( {salary, expenses, zipcode , combinedRate}){
 		return Math.round((income - tax)*100)/100;
 	}
 	salaryAfterTax = calculateSalaryAfterTax(salary)
+	console.log("combindedRate in the ResultPage.js:", combinedRate);
 	expensesTax = combinedRate * expenses
 
 	return(
