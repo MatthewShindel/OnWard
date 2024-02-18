@@ -1,4 +1,8 @@
 export const getTaxRate = (zipcode) => {
+	// function handleError(error) {
+	// 	setError(error)
+	// }
+
 	// const url = `https://u-s-a-sales-taxes-per-zip-code.p.rapidapi.com/${zipcode}`;
 	// const options = {
 	// 	method: 'GET',
@@ -11,16 +15,16 @@ export const getTaxRate = (zipcode) => {
 	// fetch(url, options)
 	// .then(response => {
 	// 	if (!response.ok) {
-	// 		throw new Error('Network response was not ok')
+	// 		throw new Error(`${response.status}: ${response.statusText}`)
 	// 	}
 	// 	return response.json();
 	// })
 	// .then(data => {
 	// 	return (data.estimated_combined_rate) //returns a single number, the combined rate
 	// })
+	// .catch(error => handleError(error.message))
 
 	return 0.06625 //the combinded rate
-
 }
 
 // function testAPi(zipcode) {

@@ -47,7 +47,7 @@ function App() {
 			<main>
 				<Routes>
 					<Route path='/' element={<Form updateSalary = {updateSalary} updateZipcode = {updateZipcode}  updateExpenses = {updateExpenses}/>}/>
-					<Route path='/result' element={<ResultPage zipcode = {zipcode} salary = {salary} expenses = {expenses}/>}/>
+					<Route path='/result' element={<ResultPage zipcode = {zipcode} salary = {salary} expenses = {expenses} combinedRate = {combinedRate}/>}/>
 					<Route path='*' element={<ErrorPage/>}/>
 				</Routes>
 			</main>

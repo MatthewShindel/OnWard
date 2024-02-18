@@ -10,7 +10,9 @@ export default function Form( { updateSalary, updateExpenses, updateZipcode} ) {
   const [expenses, setExpenses] = useState('');
   const [zipcode, setZipcode] = useState('');
 	const navigate = useNavigate();
+	// const regex = /^\d{5}(?:[-\s]\d{4})?$/gm; 
 
+	// regex.exec(str)
   function submitUserData(event) {
     event.preventDefault();
 		//do the setting state here
@@ -21,19 +23,16 @@ export default function Form( { updateSalary, updateExpenses, updateZipcode} ) {
 		updateZipcode(zipcode);
 
 		clearInput();
-
 		// setTimeout(() => {
       navigate('/result');
     // }, 500);
   }
-
 
   function clearInput() {
     setSalary(0);
     setExpenses(0);
     setZipcode(0);
   }
-
 
   return (
     <form> 
