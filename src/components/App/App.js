@@ -1,12 +1,43 @@
 import logo from '../../logo.svg';
 import './App.css';
 import { Route, Routes, Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ErrorPage from '../ErrorPage/ErrorPage.js';
 import ResultPage from '../ResultPage/ResultPage.js';
 import Form from '../Form/Form.js';
+import { getTaxRate } from '../../ApiCalls.js';
 
 function App() {
+	const [zipcode, setZipcode] = useState(0);
+	const [salary, setSalary] = useState(0);
+	const [expenses, setExpenses] = useState(0);
+	const [combinedRate, setCombinedRate] = useState(0);
+
+	function updateZipcode(zipcode) {
+		setZipcode(zipcode)
+		console.log(zipcode , typeof zipcode);
+	}
+
+	function updateSalary(salary) {
+		setSalary(salary)
+		console.log(salary , typeof salary);
+
+	}
+	function updateExpenses(expenses) {
+		setExpenses(expenses)
+		console.log(expenses , typeof expenses);
+
+	}
+
+	function updateCombinedRate(rate) {
+		setCombinedRate(rate)
+	}
+
+	useEffect(() =>{
+		updateCombinedRate(getTaxRate(zipcode))
+	}, [zipcode])
+
+
   return (
     <div className="App">
       <header >
@@ -15,8 +46,8 @@ function App() {
 
 			<main>
 				<Routes>
-					<Route path='/' element={<Form/>}/>
-					<Route path='/result' element={<ResultPage/>}/>
+					<Route path='/' element={<Form updateSalary = {updateSalary} updateZipcode = {updateZipcode}  updateExpenses = {updateExpenses}/>}/>
+					<Route path='/result' element={<ResultPage zipcode = {zipcode} salary = {salary} expenses = {expenses}/>}/>
 					<Route path='*' element={<ErrorPage/>}/>
 				</Routes>
 			</main>

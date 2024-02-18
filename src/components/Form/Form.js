@@ -1,75 +1,78 @@
 import './Form.css'
+import { getTaxRate } from '../../ApiCalls'
+import { useState } from 'react';
+// import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 
+export default function Form( { updateSalary, updateExpenses, updateZipcode} ) {
+	const [salary, setSalary] = useState('');
+  const [expenses, setExpenses] = useState('');
+  const [zipcode, setZipcode] = useState('');
+	const navigate = useNavigate();
 
-export default function Form() {
+  function submitUserData(event) {
+    event.preventDefault();
+		//do the setting state here
+		//after that's done, clearContent
 
-	function testAPi(zipcode) {
-		const url = 'https://u-s-a-sales-taxes-per-zip-code.p.rapidapi.com/10017';
-		const options = {
-			method: 'GET',
-			headers: {
-				'X-RapidAPI-Key': '8e3c03a57bmshcf9c926514fc323p15ca95jsna29d71f8a66a',
-				'X-RapidAPI-Host': 'u-s-a-sales-taxes-per-zip-code.p.rapidapi.com'
-			}
-		};
+		updateSalary(salary);
+		updateExpenses(expenses);
+		updateZipcode(zipcode);
 
-		fetch(url, options)
-			.then(response => {
-				if (!response.ok) {
-					throw new Error(`${response.status}: ${response.statusText}`);
-				} else {
-					return response.json()
-				}
-			})
-			.then(data => console.log(data))
+		clearInput();
 
-	}
+		// setTimeout(() => {
+      navigate('/result');
+    // }, 500);
+  }
 
 
-	return (
-		<div className="Form">
-			<h1>This is the form page</h1>
-			<button ></button>
+  function clearInput() {
+    setSalary(0);
+    setExpenses(0);
+    setZipcode(0);
+  }
 
-			<form>
-				<input
-					type='text'
-					placeholder='Salary'
-					name='salary'
-				/>
-				<input
-					type='text'
-					placeholder='expenses'
-					name='zipcode'
-				/>
-				<input
-					type='text'
-					placeholder='Zipcode'
-					name='zipcode'
-				/>
-			</form>
-		</div>
-	)
+
+  return (
+    <form> 
+			<input
+        type='text'
+        placeholder='Salary'
+        name='salary'
+        value={salary}
+        onChange={event => setSalary(event.target.value)}
+      />
+
+			<input
+        type='text'
+        placeholder='Expenses'
+        name='expenses'
+        value={expenses}
+        onChange={event => setExpenses(event.target.value)}
+      />
+
+			<input
+        type='text'
+        placeholder='Zipcode'
+        name='zipcode'
+        value={zipcode}
+        onChange={event => setZipcode(event.target.value)}
+      />
+				<button className="submitUserInput" onClick={submitUserData}>SUBMIT</button>
+    </form> 
+  )
 }
+{/* <Link to="/">
+			<h3 >Click here to head back home!</h3>
+		</Link> */}
+{/* <Link to={`/`}>
+			<input type="button" className="exitButton" value={'Click to Leave'}></input>
+		</Link> */}
+	// 	<Link to="/">
+	// 	<button className="return-to-game-btn">Return to Game</button>
+	// </Link> from triviaTroll
 
-{/* <form>
-	<input
-		type='text'
-		placeholder='Title'
-		name='title'
-		value={title}
-		onChange={event => setTitle(event.target.value)}
-	/>
 
-	<input
-		type='text'
-		placeholder='Description'
-		name='description'
-		value={description}
-		onChange={event => setDescription(event.target.value)}
-	/>
 
-	<button onClick={event =>
-		submitIdeas(event)}>Submit</button>
-</form> */}
