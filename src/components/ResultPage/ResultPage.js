@@ -34,11 +34,11 @@ export default function ResultPage( {salary, expenses, zipcode , combinedRate}){
 			<h1>This is the ResultPage</h1>
 			<h2>This is the salary, ${salary}</h2>
 			<h2>This is the salary after taxes, ${salaryAfterTax}</h2>
-			<h2>This is the expenses annually, ${expenses}</h2>
+			<h2>This is the annual expenses, ${expenses}</h2>
 			<h2>This is the tax on expenses, ${expensesTax}</h2>
 			<h2>This is the zipcode, {zipcode}</h2>
 
-			<h1>This is your final salary after all expesnse and taxes:</h1>
+			<h1>This is your final salary after all expenses and taxes:</h1>
 			<h1>${salaryAfterTax - expenses - expensesTax}</h1>
 
 			

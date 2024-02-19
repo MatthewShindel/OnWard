@@ -49,6 +49,7 @@ export default function Form( { updateSalary, updateExpenses, updateZipcode, upd
   return (
     <form> 
 			<input
+				data-testid = "salary"
         type='text'
         placeholder='Salary'
         name='salary'
