@@ -5,11 +5,11 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-export default function Form( { updateSalary, updateExpenses, updateZipcode, updateCombinedRate} ) {
+export default function Form( { updateSalary, updateExpenses, updateZipcode, updateCombinedRate, navigate} ) {
 	const [salary, setSalary] = useState('');
   const [expenses, setExpenses] = useState('');
   const [zipcode, setZipcode] = useState('');
-	const navigate = useNavigate();
+	// const navigate = useNavigate();
   function submitUserData(event) {
     event.preventDefault();
 		const validNumberRegex = /\d+/
