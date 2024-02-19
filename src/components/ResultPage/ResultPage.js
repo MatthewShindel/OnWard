@@ -5,7 +5,6 @@ export default function ResultPage( {salary, expenses, zipcode, combinedRate}){
 	let salaryAfterTax = 0;
 	let expensesTax = 0;
 
-
 	function calculateSalaryAfterTax(income) {
 		let tax = 0;
 		if (income <= 11600) {
@@ -44,7 +43,7 @@ export default function ResultPage( {salary, expenses, zipcode, combinedRate}){
 			
 
 			<Link to={`/`}>
-				<h3 >Click here to head back home!</h3>
+				<h3>Click here to head back home!</h3>
 			</Link>
 		</div>
 	)
