@@ -19,7 +19,6 @@ describe('Form', () => {
 		expect(getByText('SUBMIT')).toBeInTheDocument();
 	});
 
-
 	it('submits the form with valid data', async () => {
 		const updateSalary = jest.fn();
 		const updateExpenses = jest.fn();
@@ -61,13 +60,13 @@ describe('Form', () => {
 			<Form navigate={navigate} />
 		);
 
-		// Enter an invalid salary (non-numeric input)
+
 		fireEvent.change(getByPlaceholderText('Salary'), { target: { value: 'invalid' } });
 		fireEvent.change(getByPlaceholderText('Expenses'), { target: { value: '25000' } });
 		fireEvent.change(getByPlaceholderText('Zipcode'), { target: { value: '12345' } });
 		fireEvent.click(getByText('SUBMIT'));
 
-		// Check if alert is displayed
+
 		expect(global.alert).toHaveBeenCalledWith('The value you put in for your salary is invalid. Please put in a valid number.');
 	});
 
@@ -81,13 +80,11 @@ describe('Form', () => {
 			<Form navigate={navigate} />
 		);
 
-		// Enter an invalid salary (non-numeric input)
 		fireEvent.change(getByPlaceholderText('Salary'), { target: { value: '50000' } });
 		fireEvent.change(getByPlaceholderText('Expenses'), { target: { value: 'invalid' } });
 		fireEvent.change(getByPlaceholderText('Zipcode'), { target: { value: '12345' } });
 		fireEvent.click(getByText('SUBMIT'));
 
-		// Check if alert is displayed
 		expect(global.alert).toHaveBeenCalledWith('The value you put in for your expenses is invalid. Please put in a valid number.');
 	});
 
@@ -101,13 +98,11 @@ describe('Form', () => {
 			<Form navigate={navigate} />
 		);
 
-		// Enter an invalid salary (non-numeric input)
 		fireEvent.change(getByPlaceholderText('Salary'), { target: { value: '50000' } });
 		fireEvent.change(getByPlaceholderText('Expenses'), { target: { value: '25000' } });
 		fireEvent.change(getByPlaceholderText('Zipcode'), { target: { value: 'potato' } });
 		fireEvent.click(getByText('SUBMIT'));
 
-		// Check if alert is displayed
 		expect(global.alert).toHaveBeenCalledWith('The value you put in for your zipcode is invalid. Please put in a valid number.');
 	});
 
