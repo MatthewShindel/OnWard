@@ -1,20 +1,35 @@
 import { render, fireEvent } from "@testing-library/react";
 import ResultPage from "./ResultPage";
+import { BrowserRouter as Router } from 'react-router-dom';
 
 describe(ResultPage, () => {
-  it("ResultPage displays the correct salary, salary after taxes, annual expenses, tax on expenses, zipcode, and final salary after all expenses and taxes", () => {
-    const { getByText } = render(<ResultPage salary={100000} />)
-    const salaryAfterTax = 
-    expect(salaryAfterTax).toEqual(82947);
+  it("renders the text in each header, renders the salary, salary after taxes, annual expenses, tax on expenses, zipcode, and salary after tax and expenses", () => {
+    const salary =  100000;
+    const expenses =  20000;
+    const zipcode = '12345';
+    const combinedRate =  0.1;
+    const expectedSalaryAfterTaxes = 82947;
+    const expensesTax = 2000;
+    const salaryAfterTaxAndExpenses = 80947;
+    const { getByText } = render(
+      <Router>
+        <ResultPage 
+          salary={salary} 
+          expenses={expenses} 
+          zipcode={zipcode} 
+          combinedRate={combinedRate}
+        />
+      </Router>
+    );
+    expect(getByText(/This is the ResultPage/)).toBeInTheDocument();
+    expect(getByText(new RegExp(`This is the salary, \\$${salary}`))).toBeInTheDocument();
+    expect(getByText(new RegExp(`This is the salary after taxes, \\$${expectedSalaryAfterTaxes}`))).toBeInTheDocument();
+    expect(getByText(new RegExp(`This is the annual expenses, \\$${expenses}`))).toBeInTheDocument();
+    expect(getByText(new RegExp(`This is the tax on expenses, \\$${expensesTax}`))).toBeInTheDocument();
+    expect(getByText(new RegExp(`This is the zipcode, ${zipcode}`))).toBeInTheDocument();
+    expect(getByText(/This is your final salary after all expenses and taxes:/)).toBeInTheDocument();
+    expect(getByText(`\$${salaryAfterTaxAndExpenses}`)).toBeInTheDocument();
+    expect(getByText(/Click here to head back home!/)).toBeInTheDocument();
+    
   })
-  
 });
-// 82947
-{/* <h2>This is the salary, ${salary}</h2>
-			<h2>This is the salary after taxes, ${salaryAfterTax}</h2>
-			<h2>This is the expenses annually, ${expenses}</h2>
-			<h2>This is the tax on expenses, ${expensesTax}</h2>
-			<h2>This is the zipcode, {zipcode}</h2>
-
-			<h1>This is your final salary after all expenses and taxes:</h1>
-			<h1>${salaryAfterTax - expenses - expensesTax}</h1> */}

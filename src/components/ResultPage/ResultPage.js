@@ -1,10 +1,10 @@
 import './ResultPage.css'
 import { Link } from 'react-router-dom'
 
-export default function ResultPage( {salary, expenses, zipcode , combinedRate}){
+export default function ResultPage( {salary, expenses, zipcode, combinedRate}){
 	let salaryAfterTax = 0;
 	let expensesTax = 0;
-
+  let salaryAfterTaxAndExpenses = 0;
 
 	function calculateSalaryAfterTax(income) {
 		let tax = 0;
@@ -26,8 +26,9 @@ export default function ResultPage( {salary, expenses, zipcode , combinedRate}){
 		return Math.round((income - tax)*100)/100;
 	}
 	salaryAfterTax = calculateSalaryAfterTax(salary)
-	console.log("combindedRate in the ResultPage.js:", combinedRate);
+	// console.log("combinedRate in the ResultPage.js:", combinedRate);
 	expensesTax = combinedRate * expenses
+  salaryAfterTaxAndExpenses = salaryAfterTax - expensesTax
 
 	return(
 		<div className="ResultPage">
@@ -39,12 +40,10 @@ export default function ResultPage( {salary, expenses, zipcode , combinedRate}){
 			<h2>This is the zipcode, {zipcode}</h2>
 
 			<h1>This is your final salary after all expenses and taxes:</h1>
-			<h1>${salaryAfterTax - expenses - expensesTax}</h1>
-
-			
+			<h1>${salaryAfterTaxAndExpenses}</h1>
 
 			<Link to={`/`}>
-				<h3 >Click here to head back home!</h3>
+				<h3>Click here to head back home!</h3>
 			</Link>
 		</div>
 	)
