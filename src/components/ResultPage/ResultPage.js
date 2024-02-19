@@ -1,7 +1,7 @@
 import './ResultPage.css'
 import { Link } from 'react-router-dom'
 
-export default function ResultPage( {salary, expenses, zipcode , combinedRate}){
+export default function ResultPage( {salary, expenses, zipcode, combinedRate}){
 	let salaryAfterTax = 0;
 	let expensesTax = 0;
 
