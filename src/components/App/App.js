@@ -8,6 +8,7 @@ import Form from '../Form/Form.js';
 import { getTaxRate } from '../../ApiCalls.js';
 import { useNavigate } from 'react-router-dom';
 
+
 function App() {
 	const [zipcode, setZipcode] = useState(0);
 	const [salary, setSalary] = useState(0);
@@ -46,9 +47,8 @@ function App() {
   return (
     <div className="App">
       <header >
-				
+				<img src='/default.png' alt='OnWard Logo'/>
       </header>
-
 			<main>
 				<Routes>
 					<Route path='/' element={<Form updateSalary = {updateSalary} updateZipcode = {updateZipcode}  updateExpenses = {updateExpenses} updateCombinedRate = {updateCombinedRate} navigate = {navigate}/>}/>
