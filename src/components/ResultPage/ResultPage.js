@@ -45,6 +45,7 @@ export default function ResultPage({ salary, expenses, zipcode, combinedRate }) 
 			<h1>This is your final salary after all expenses and taxes:</h1>
 			<h1>${salaryAfterTaxAndExpenses}</h1>
 
+			
 			<Link to={`/`}>
 				<h3>Click here to head back home!</h3>
 			</Link>
@@ -54,10 +55,9 @@ export default function ResultPage({ salary, expenses, zipcode, combinedRate }) 
 
 
 
-
-{/* <h1>Here's Your Results</h1>
-<p>Base Salary: ${numberWithCommas(salary)} </p>
-<p>Salary after income Tax: ${numberWithCommas(salaryAfterTax)} </p>
-<p>Expenses:- ${numberWithCommas(expenses)} </p>
-<p>Expenses Taxes: - ${numberWithCommas(expensesTax)} </p>
-<h3>Final Salary: ${numberWithCommas(salaryAfterTaxAndExpenses)} </h3> */}
+{/* <h1 className='header'>Here's Your Results</h1>
+<p className='salary'>Base Salary: ${numberWithCommas(salary)} </p>
+<p className='salaryMinusTaxes'>Salary after income Tax: ${numberWithCommas(salaryAfterTax)} </p>
+<p className='expenses'>Expenses:- ${numberWithCommas(expenses)} </p>
+<p className='expensesTax'>Expenses Taxes: - ${numberWithCommas(expensesTax)} </p>
+<h3 className='salaryTagline'>Final Salary: ${numberWithCommas(salaryAfterTaxAndExpenses)} </h3> */}
