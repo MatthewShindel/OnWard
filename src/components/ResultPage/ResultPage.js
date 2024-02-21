@@ -29,24 +29,18 @@ export default function ResultPage({ salary, expenses, zipcode, combinedRate }) 
 		}
 		return Math.round((income - tax) * 100) / 100;
 	}
+	
 	salaryAfterTax = calculateSalaryAfterTax(salary)
-	// console.log("combinedRate in the ResultPage.js:", combinedRate);
 	expensesTax = parseFloat(combinedRate) * parseInt(expenses)
-  salaryAfterTaxAndExpenses = salaryAfterTax - expensesTax
-
+	salaryAfterTaxAndExpenses = salaryAfterTax - expensesTax
 	return (
 		<div className="ResultPage">
-			<h1 className="header">This is the ResultPage</h1>
-			<h2 className="salary">This is the salary, ${salary}</h2>
-			<h2 className="salaryMinusTaxes">This is the salary after taxes, ${salaryAfterTax}</h2>
-			<h2 className="salaryMinusTaxes">This is the combinedRate ${combinedRate}</h2>
-			<h2 className="expenses">This is the annual expenses, ${expenses}</h2>
-			<h2 className="expensesTax">This is the tax on expenses, ${expensesTax}</h2>
-			<h2 className="zipcode">This is the zipcode, {zipcode}</h2>
-
-			<h1 className="salaryTagline">This is your final salary after all expenses and taxes:</h1>
-			<h1 className="finalSalaryAmount">${salaryAfterTaxAndExpenses}</h1>
-
+			<h1 className='header'>Here's Your Results</h1>
+			<p className='salary'>Base Salary: ${numberWithCommas(salary)} </p>
+			<p className='salaryMinusTaxes'>Salary after income Tax: ${numberWithCommas(salaryAfterTax)} </p>
+			<p className='expenses'>Expenses: -${numberWithCommas(expenses)} </p>
+			<p className='expensesTax'>Expenses Taxes: -${numberWithCommas(expensesTax)} </p>
+			<h3 className='salaryTagline'>Final Salary: ${numberWithCommas(salaryAfterTaxAndExpenses)} </h3>
 			<Link to={`/`} className='homePageLink'>
 				<h3>Click here to head back home!</h3>
 			</Link>
@@ -54,11 +48,3 @@ export default function ResultPage({ salary, expenses, zipcode, combinedRate }) 
 	)
 }
 
-
-
-{/* <h1 className='header'>Here's Your Results</h1>
-<p className='salary'>Base Salary: ${numberWithCommas(salary)} </p>
-<p className='salaryMinusTaxes'>Salary after income Tax: ${numberWithCommas(salaryAfterTax)} </p>
-<p className='expenses'>Expenses:- ${numberWithCommas(expenses)} </p>
-<p className='expensesTax'>Expenses Taxes: - ${numberWithCommas(expensesTax)} </p>
-<h3 className='salaryTagline'>Final Salary: ${numberWithCommas(salaryAfterTaxAndExpenses)} </h3> */}

@@ -1,15 +1,12 @@
 import './Form.css'
 import { getTaxRate } from '../../ApiCalls'
 import { useState } from 'react';
-// import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
-
 
 export default function Form({ updateSalary, updateExpenses, updateZipcode, updateCombinedRate, navigate }) {
 	const [salary, setSalary] = useState('');
 	const [expenses, setExpenses] = useState('');
 	const [zipcode, setZipcode] = useState('');
-	// const navigate = useNavigate();
 	function submitUserData(event) {
 		event.preventDefault();
 		const validNumberRegex = /\d+/
@@ -27,14 +24,13 @@ export default function Form({ updateSalary, updateExpenses, updateZipcode, upda
 			alert('The value you put in for your zipcode is invalid. Please put in a valid number.')
 			return;
 		}
-		console.log(zipcode);
+		
 		getTaxRate(zipcode)
 			.then(data => {
 				updateCombinedRate(data);
 				updateSalary(salary);
 				updateExpenses(expenses);
 				updateZipcode(zipcode);
-
 				clearInput();
 				navigate('/result');
 			})
@@ -79,15 +75,7 @@ export default function Form({ updateSalary, updateExpenses, updateZipcode, upda
 		</div>
 	)
 }
-{/* <Link to="/">
-			<h3 >Click here to head back home!</h3>
-		</Link> */}
-{/* <Link to={`/`}>
-			<input type="button" className="exitButton" value={'Click to Leave'}></input>
-		</Link> */}
-// 	<Link to="/">
-// 	<button className="return-to-game-btn">Return to Game</button>
-// </Link> from triviaTroll
+
 
 
 
