@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+	display: flex;
+	flex-direction: column;
+	background-color: rgb(254,237,223);
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: repeat;
+	font-family: "Montserrat", sans-serif;
+	height: 100vh;
 }
 
 .App-logo {
@@ -27,6 +35,15 @@
 .App-link {
   color: #61dafb;
 }
+
+img{
+	max-height: 150px;
+}
+
+p{
+	font-weight: 400;
+}
+
 
 @keyframes App-logo-spin {
   from {
