@@ -31,22 +31,23 @@ export default function ResultPage({ salary, expenses, zipcode, combinedRate }) 
 	}
 	salaryAfterTax = calculateSalaryAfterTax(salary)
 	// console.log("combinedRate in the ResultPage.js:", combinedRate);
-	expensesTax = combinedRate * expenses
-	salaryAfterTaxAndExpenses = salaryAfterTax - expensesTax
+	expensesTax = parseFloat(combinedRate) * parseInt(expenses)
+  salaryAfterTaxAndExpenses = salaryAfterTax - expensesTax
 
 	return (
 		<div className="ResultPage">
-			<h2>This is the salary, ${salary}</h2>
-			<h2>This is the salary after taxes, ${salaryAfterTax}</h2>
-			<h2>This is the annual expenses, ${expenses}</h2>
-			<h2>This is the tax on expenses, ${expensesTax}</h2>
-			<h2>This is the zipcode, {zipcode}</h2>
+			<h1 className="header">This is the ResultPage</h1>
+			<h2 className="salary">This is the salary, ${salary}</h2>
+			<h2 className="salaryMinusTaxes">This is the salary after taxes, ${salaryAfterTax}</h2>
+			<h2 className="salaryMinusTaxes">This is the combinedRate ${combinedRate}</h2>
+			<h2 className="expenses">This is the annual expenses, ${expenses}</h2>
+			<h2 className="expensesTax">This is the tax on expenses, ${expensesTax}</h2>
+			<h2 className="zipcode">This is the zipcode, {zipcode}</h2>
 
-			<h1>This is your final salary after all expenses and taxes:</h1>
-			<h1>${salaryAfterTaxAndExpenses}</h1>
+			<h1 className="salaryTagline">This is your final salary after all expenses and taxes:</h1>
+			<h1 className="finalSalaryAmount">${salaryAfterTaxAndExpenses}</h1>
 
-			
-			<Link to={`/`}>
+			<Link to={`/`} className='homePageLink'>
 				<h3>Click here to head back home!</h3>
 			</Link>
 		</div>

@@ -1,0 +1,9 @@
+{
+  "state": "NY",
+  "state_rate": 0.04,
+  "estimated_combined_rate": 0.08875,
+  "estimated_county_rate": 0.0,
+  "estimated_city_rate": 0.045,
+  "estimated_special_rate": 0.00375,
+  "risk_level": 0.0
+}
