@@ -21,10 +21,10 @@ test('renders correct content in ResultPage component', () => {
   );
 
   const baseSalaryText = getByText(`Base Salary: $100,000`);
-  const salaryAfterTaxText = getByText('Salary after income Tax: $82,947');
+  const salaryAfterTaxText = getByText('Salary after income Tax: $82,947.00');
   const expensesText = getByText('Expenses: -$24,000');
-  const expensesTaxText = getByText('Expenses Taxes: -$240');
-  const finalSalaryText = getByText('Final Salary: $58,707');
+  const expensesTaxText = getByText('Expenses Taxes: -$240.00');
+  const finalSalaryText = getByText('Final Salary: $58,707.00');
 
   expect(baseSalaryText).toBeInTheDocument();
   expect(salaryAfterTaxText).toBeInTheDocument();
