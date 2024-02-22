@@ -31,14 +31,14 @@ export default function ResultPage({ salary, expenses, zipcode, combinedRate }) 
 	}
 	
 	salaryAfterTax = calculateSalaryAfterTax(salary)
-	expensesTax = parseFloat(combinedRate) * parseInt(expenses)
-	salaryAfterTaxAndExpenses = salaryAfterTax - expensesTax
+	expensesTax = parseFloat(combinedRate) * parseInt(expenses * 12)
+	salaryAfterTaxAndExpenses = salaryAfterTax - expensesTax -parseInt(expenses * 12)
 	return (
 		<div className="ResultPage">
 			<h1 className='header'>Here's Your Results</h1>
 			<p className='salary'>Base Salary: ${numberWithCommas(salary)} </p>
 			<p className='salaryMinusTaxes'>Salary after income Tax: ${numberWithCommas(salaryAfterTax)} </p>
-			<p className='expenses'>Expenses: -${numberWithCommas(expenses)} </p>
+			<p className='expenses'>Expenses: -${numberWithCommas(expenses * 12)} </p>
 			<p className='expensesTax'>Expenses Taxes: -${numberWithCommas(expensesTax)} </p>
 			<h3 className='salaryTagline'>Final Salary: ${numberWithCommas(salaryAfterTaxAndExpenses)} </h3>
 			<Link to={`/`} className='homePageLink'>

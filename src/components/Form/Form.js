@@ -44,7 +44,7 @@ export default function Form({ updateSalary, updateExpenses, updateZipcode, upda
 
 	return (
 		<div className='form-container'>
-			<p>Enter your salary, monthly expense and zipcode to get an estimate of your future income.</p>
+			<p>Enter your salary, monthly expenses and zipcode to get an estimate of your future income.</p>
 			<form className='main-form'>
 				<input
 					data-testid="salary"

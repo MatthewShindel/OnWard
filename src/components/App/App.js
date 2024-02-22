@@ -48,3 +48,7 @@ function App() {
 }
 
 export default App;
+
+
+// src/components/App/App.js
+// /Users/matthewshindel/Documents/Turing/Module_3/onward/src/components/App/App.js

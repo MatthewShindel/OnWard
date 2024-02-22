@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# OnWard:
+![Onward Logo](/public/default.png)
+
+OnWard is a simplified all in one finance calculator, allowing users to input their yearly salary, their monthly expenses, and their expected zipcode, to get their expected salary after all taxes and expenses. The calculator does all of the calculations internally, using a API to get information about a specific zipcode's taxes.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Using This application:
 
-In the project directory, you can run:
+This application is deployed at this URL:
+https://matthewshindel.github.io/OnWard/
 
-### `npm start`
+Additionally, if you wish you use this application locally, you can for this do the following:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. clone down this repo using 'git clone'
+2. cd into that repo
+3. run 'npm install' to install the needed packages
+4. run 'npm start' to start the application.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The application with run in your broswer at
+[http://localhost:3000](http://localhost:3000)
 
-### `npm test`
+### Learning Goals:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Choose, teach ourselves, and implement a new technology in a React App we design and build. We created and held ourselves to our own MVP for the project, which was designed to be a multi-page React App using Router for a single user. The App manipulates data provided by the user and by an API in order to provide the user with estimates of taxes and salary after taxes and expenses. These estimates are provided according to the zipcode that the user provides. 
 
-### `npm run build`
+### Wins and Challenges:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Teaching ourselves and implementing a new testing library, in this case the React Testing Library. We used this in addition to Cypress. Stubbing data with params was a new challenge for us and did present some difficulties when we were implementing Cypress testing with intercepts for our fetch calls. Being able to implement the React Testing Library in our App gave us a way to test individual components with their javascript logic performing data manipulation within each component. This gave us a tool reminiscent of Mocha and Chai that was a good complement to Cypress testing.
