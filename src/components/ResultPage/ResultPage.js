@@ -30,9 +30,9 @@ export default function ResultPage({ salary, expenses, zipcode, combinedRate }) 
 		return Math.round((income - tax) * 100) / 100;
 	}
 	
-	salaryAfterTax = calculateSalaryAfterTax(salary)
-	expensesTax = parseFloat(combinedRate) * parseInt(expenses * 12)
-	salaryAfterTaxAndExpenses = salaryAfterTax - expensesTax -parseInt(expenses * 12)
+	salaryAfterTax = (calculateSalaryAfterTax(salary)).toFixed(2)
+	expensesTax = (parseFloat(combinedRate) * parseInt(expenses * 12)).toFixed(2)
+	salaryAfterTaxAndExpenses = (salaryAfterTax - expensesTax -parseInt(expenses * 12)).toFixed(2)
 	return (
 		<div className="ResultPage">
 			<h1 className='header'>Here's Your Results</h1>
