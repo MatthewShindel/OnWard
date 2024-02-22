@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/OnWard/static/css/main.2244ebe2.css",
-    "main.js": "/OnWard/static/js/main.d3a30165.js",
+    "main.js": "/OnWard/static/js/main.18cc0f35.js",
     "static/js/453.67d1aeed.chunk.js": "/OnWard/static/js/453.67d1aeed.chunk.js",
     "static/media/logo.svg": "/OnWard/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/OnWard/index.html",
     "main.2244ebe2.css.map": "/OnWard/static/css/main.2244ebe2.css.map",
-    "main.d3a30165.js.map": "/OnWard/static/js/main.d3a30165.js.map",
+    "main.18cc0f35.js.map": "/OnWard/static/js/main.18cc0f35.js.map",
     "453.67d1aeed.chunk.js.map": "/OnWard/static/js/453.67d1aeed.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2244ebe2.css",
-    "static/js/main.d3a30165.js"
+    "static/js/main.18cc0f35.js"
   ]
 }
