@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="App">
       <header >
-				<img src='/default.png' alt='OnWard Logo'/>
+				<img src='default.png' alt='OnWard Logo'/>
       </header>
 			<main>
 				<Routes>
